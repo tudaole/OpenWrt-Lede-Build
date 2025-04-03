@@ -1,4 +1,4 @@
-name: Build_openwrt_x86_2410
+name: Build_Openwrt_R2410_66
 
 on: 
   repository_dispatch:
@@ -13,7 +13,7 @@ on:
 #    types: [started]
 
 jobs:
-  Build_openwrt_x86_2410:
+  Build_Openwrt_R2410_66:
     runs-on: ubuntu-latest
     steps:
     - name: Clone Repository
