@@ -5,8 +5,8 @@ on:
   workflow_dispatch:
 
 # 定时触发编译
-  schedule:
-    - cron: 8 18 * * 4
+  #schedule:
+    #- cron: 8 18 * * 4
 
 # 点赞☆Star触发编译
 #  watch:
@@ -106,19 +106,19 @@ jobs:
     - name: Upload Firmwares
       uses: actions/upload-artifact@main
       with:
-        name: X86-OpenWrt-R24.10
+        name: openwrt_x86_2410
         path: X86_Out/*.img.gz
 
     - name: Upload config
       uses: actions/upload-artifact@main
       with:
-        name: X86-R24.10-config
+        name: openwrt_x86_2410.config
         path: X86_Out/openwrt_x86_2410.config
 
     - name: Upload Packages
       uses: actions/upload-artifact@main
       with:
-        name: X86-R24.10-Packages
+        name: openwrt_x86_2410-Packages
         path: openwrt/bin/packages
         
     - name: Generate Tag & Release Name
@@ -134,8 +134,10 @@ jobs:
       uses: ncipollo/release-action@v1.14.0
       with:
         artifacts: X86_Out/*.img.gz 
-        name: ${{ steps.generate_name.outputs.release_name }}
-        tag: ${{ steps.generate_name.outputs.release_tag }}
+        #name: ${{ steps.generate_name.outputs.release_name }}
+        #tag: ${{ steps.generate_name.outputs.release_tag }}
+        name: openwrt_x86_2410
+        tag: openwrt_x86_2410
         token: ${{ secrets.GH_TOKEN }}
 
 
