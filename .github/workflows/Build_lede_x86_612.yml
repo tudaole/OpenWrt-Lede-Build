@@ -100,24 +100,24 @@ jobs:
         rom=openwrt/bin/targets/x86/64/openwrt-x86-64-generic-squashfs-combined-efi.img.gz
         getmd5 $rom
 
-        cp -a $rom ./X86_Out/lede-X86-6.12-2305-$(date +%Y%m%d)_${md5}.img.gz
+        cp -a $rom ./X86_Out/Lede-X86_64-6.12-2305-$(date +%Y%m%d)_${md5}.img.gz
                
     - name: Upload Firmwares
       uses: actions/upload-artifact@main
       with:
-        name: X86-OpenWrt-6.12-lite
+        name: Lede-X86_64-6.12
         path: X86_Out/*.img.gz
 
     - name: Upload config
       uses: actions/upload-artifact@main
       with:
-        name: X86-6.12-lite-config
+        name: Lede-X86_64-6.12.config
         path: X86_Out/lede_x86_612.config
 
     - name: Upload Packages
       uses: actions/upload-artifact@main
       with:
-        name: X86-612-Packages
+        name: Lede-X86_64-6.12-Packages
         path: openwrt/bin/packages
         
     - name: Generate Tag & Release Name
@@ -133,8 +133,10 @@ jobs:
       uses: ncipollo/release-action@v1.14.0
       with:
         artifacts: X86_Out/*.img.gz 
-        name: ${{ steps.generate_name.outputs.release_name }}
-        tag: ${{ steps.generate_name.outputs.release_tag }}
+        #name: ${{ steps.generate_name.outputs.release_name }}
+        #tag: ${{ steps.generate_name.outputs.release_tag }}
+        name: Lede-X86_64-6.12
+        tag: Lede-X86_64-6.12
         token: ${{ secrets.GH_TOKEN }}
                          
    
