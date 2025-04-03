@@ -59,8 +59,8 @@ jobs:
         cp -f ../diy/op/op2.sh ./        
         chmod +x ./op2.sh && ./op2.sh       
 
-        sed -i "s/DISTRIB_DESCRIPTION='*.*'/DISTRIB_DESCRIPTION='AE86Wrt-X86-R24.10-$(date +%Y%m%d)'/g"  package/base-files/files/etc/openwrt_release
-        sed -i "s/OPENWRT_RELEASE='*.*'/OPENWRT_RELEASE='AE86Wrt-X86-R24.10-$(date +%Y%m%d)'/g"  package/base-files/files/usr/lib/os-release
+        sed -i "s/DISTRIB_DESCRIPTION='*.*'/DISTRIB_DESCRIPTION='OpenWrt-X86-R24.10-$(date +%Y%m%d)'/g"  package/base-files/files/etc/openwrt_release
+        sed -i "s/OPENWRT_RELEASE='*.*'/OPENWRT_RELEASE='OpenWrt-X86-R24.10-$(date +%Y%m%d)'/g"  package/base-files/files/usr/lib/os-release
         
     - name: Configuration Customization - Build_openwrt_x86_2410
       env:
@@ -101,7 +101,7 @@ jobs:
         rom=openwrt/bin/targets/x86/64/openwrt-x86-64-generic-squashfs-combined-efi.img.gz
         getmd5 $rom
                 
-        cp -a $rom ./X86_Out/AE86Wrt-X86-6.6-R24.10-$(date +%Y%m%d)_${md5}.img.gz
+        cp -a $rom ./X86_Out/OpenWrt-X86-6.6-R24.10-$(date +%Y%m%d)_${md5}.img.gz
                
     - name: Upload Firmwares
       uses: actions/upload-artifact@main
