@@ -12,8 +12,8 @@ echo -e "msgstr \"魔法网络\"" >> feeds/luci/modules/luci-base/po/zh_Hans/bas
 sed -i 's/192.168.1.1/192.168.1.11/g' package/base-files/files/bin/config_generate
 
 ##
-#rm -rf ./feeds/2305ipk/patch/luci-app-turboacc
-#rm -rf ./package/feeds/2305ipk/luci-app-turboacc
+rm -rf ./feeds/2305ipk/patch/luci-app-turboacc
+rm -rf ./package/feeds/2305ipk/luci-app-turboacc
 
 
 ##取消bootstrap为默认主题
@@ -36,19 +36,18 @@ sed -i "3iuci commit istore" package/base-files/files/bin/config_generate
 sed -i "53iLUCI_LANG.zh-cn=\$(LUCI_LANG.zh_Hans)" feeds/luci/luci.mk
 sed -i "54iLUCI_LANG.zh-tw=\$(LUCI_LANG.zh_Hant)" feeds/luci/luci.mk
 
-
 ##MosDNS
-# rm -rf feeds/packages/net/mosdns/*
-# cp -af feeds/2305ipk/op-mosdns/mosdns/* feeds/packages/net/mosdns/
-# rm -rf feeds/packages/net/v2ray-geodata/*
-# cp -af feeds/2305ipk/op-mosdns/v2ray-geodata/* feeds/packages/net/v2ray-geodata/
+rm -rf feeds/packages/net/mosdns/*
+cp -af feeds/2305ipk/op-mosdns/mosdns/* feeds/packages/net/mosdns/
+rm -rf feeds/packages/net/v2ray-geodata/*
+cp -af feeds/2305ipk/op-mosdns/v2ray-geodata/* feeds/packages/net/v2ray-geodata/
 
 
 ## fix_ss_libv
-#rm -rf package/libs/mbedtls
-#rm -rf package/libs/uclient
-#rm -rf package/libs/ustream-ssl
-#cp -af feeds/2305ipk/patch/fix_ss_libv/*  package/libs/
+rm -rf package/libs/mbedtls
+rm -rf package/libs/uclient
+rm -rf package/libs/ustream-ssl
+cp -af feeds/2305ipk/patch/fix_ss_libv/*  package/libs/
 
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 24.x feeds/packages/lang/golang
