@@ -58,13 +58,11 @@ sed -i "s/speed = <2500>;/speed = <1000>;/g" target/linux/mediatek/dts/mt7986a-*
 sed -i "s/speed = <2500>;/speed = <1000>;/g" target/linux/mediatek/dts/mt7622-*.dtsi
 sed -i "s/speed = <2500>;/speed = <1000>;/g" target/linux/mediatek/dts/mt7623a-*.dtsi
 
-
 ##
 sed -i '/option Interface/d'  package/network/services/dropbear/files/dropbear.config
 
-
 ## rockchip
-#cp -af feeds/2305ipk/patch/rockchip/*  target/linux/rockchip/armv8/base-files/
+cp -af feeds/2305ipk/patch/rockchip/*  target/linux/rockchip/armv8/base-files/
 
 ## golang 为 1.23.x
 rm -rf feeds/packages/lang/golang
