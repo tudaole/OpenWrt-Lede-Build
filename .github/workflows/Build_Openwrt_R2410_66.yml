@@ -136,8 +136,8 @@ jobs:
         artifacts: X86_Out/*.img.gz 
         #name: ${{ steps.generate_name.outputs.release_name }}
         #tag: ${{ steps.generate_name.outputs.release_tag }}
-        name: Openwrt_R2410_66
-        tag: Openwrt_R2410_66
+        name: Openwrt-R2410-66
+        tag: Openwrt-R2410-66
         token: ${{ secrets.GH_TOKEN }}
 
 
