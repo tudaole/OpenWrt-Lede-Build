@@ -135,8 +135,8 @@ jobs:
         artifacts: X86_Out/*.img.gz 
         #name: ${{ steps.generate_name.outputs.release_name }}
         #tag: ${{ steps.generate_name.outputs.release_tag }}
-        name: Lede_R2305_612
-        tag: Lede_R2305_612
+        name: Lede-R2305-612
+        tag: Lede-R2305-612
         token: ${{ secrets.GH_TOKEN }}
                          
    
