@@ -1,8 +1,3 @@
-#!/bin/bash
-#=================================================
-# DaoDao's script
-#=================================================             
-
 ####
 echo -e "\nmsgid \"Control\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
 echo -e "msgstr \"控制\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
