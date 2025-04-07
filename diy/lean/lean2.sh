@@ -1,9 +1,3 @@
-#!/bin/bash
-#=================================================
-# DaoDao's script
-#=================================================
-
-
 #补充汉化
 echo -e "\nmsgid \"Control\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
 echo -e "msgstr \"控制\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
@@ -26,8 +20,6 @@ sed -i 's/192.168.1.1/192.168.1.11/g' package/base-files/luci2/bin/config_genera
 ##清除默认密码password
 sed -i '/V4UetPzk$CYXluq4wUazHjmCDBCqXF/d' package/lean/default-settings/files/zzz-default-settings
 
-
-
 ##取消bootstrap为默认主题
 rm -rf ./feeds/luci/themes/luci-theme-argon
 rm -rf ./feeds/luci/themes/luci-theme-design
@@ -45,7 +37,7 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci-n
 ##加入作者信息
 sed -i "s/DISTRIB_DESCRIPTION='*.*'/DISTRIB_DESCRIPTION='OpenWrt-GXNAS Build $(date +%Y%m%d)'/g" package/lean/default-settings/files/zzz-default-settings   
 sed -i "s/DISTRIB_REVISION='*.*'/DISTRIB_REVISION=' By GXNAS'/g" package/lean/default-settings/files/zzz-default-settings
-cp -af feeds/2305ipk/patch/diy/banner  package/base-files/files/etc/banner
+#cp -af feeds/2305ipk/patch/diy/banner  package/base-files/files/etc/banner
 
 sed -i "2iuci set istore.istore.channel='ae86_daodao'" package/lean/default-settings/files/zzz-default-settings
 sed -i "3iuci commit istore" package/lean/default-settings/files/zzz-default-settings
@@ -72,7 +64,7 @@ sed -i '/option Interface/d'  package/network/services/dropbear/files/dropbear.c
 
 
 ## rockchip
-cp -af feeds/2305ipk/patch/rockchip/*  target/linux/rockchip/armv8/base-files/
+#cp -af feeds/2305ipk/patch/rockchip/*  target/linux/rockchip/armv8/base-files/
 
 ## golang 为 1.23.x
 rm -rf feeds/packages/lang/golang
